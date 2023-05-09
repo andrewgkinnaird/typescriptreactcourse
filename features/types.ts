@@ -13,12 +13,7 @@ let nums: number[] = [1,2,3];
 let words: string[] = ['red','green','blue'];
 let truths: boolean[] = [true,false,true];
 
-//classes
-class Car {
 
-}
-
-let myCar: Car = new Car();
 
 let point: {x:number;y:number} = {
   x:10,
