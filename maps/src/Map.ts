@@ -1,4 +1,4 @@
-interface Mappable {
+export interface Mappable {
   location:{
     lat:number,
     lng:number
@@ -14,13 +14,21 @@ export class Map {
     this.googleMap = new google.maps.Map(mapElement,mapOptions); 
   }
 
-  addMarker(mappable:Mappable){
-    new google.maps.Marker({
+  addMarker(mappable:Mappable):void{
+    const marker = new google.maps.Marker({
       map:this.googleMap,
       position:{
         lat:mappable.location.lat,
         lng:mappable.location.lng
       }
+    })
+
+    marker.addListener('click', () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content:'Hi'
+      })
+
+      infoWindow.open(this.googleMap,marker)
     })
   }
 }
