@@ -1,6 +1,7 @@
 .vscode
 fetchJSON/node_modules/
 .node_modules
+node_modules
 *.d.ts
 .parcel-cache
 maps/dist
